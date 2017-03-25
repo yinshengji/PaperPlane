@@ -1,0 +1,19 @@
+{
+	"name":"tc framework",
+	"description":"Lightweight PHP Framework",
+	"type":"Framework",
+	"keywords":[
+		"PHP","PHP Framework","Lightweight"
+	],
+	"require":{
+		"php":">=5.3.0",
+		"filp/whoops":"*",
+		"symfony/var-dumper":"*"
+	},
+	"repositories": {
+    "packagist": {
+        "type": "composer",
+        "url": "https://packagist.phpcomposer.com"
+    }
+}
+}

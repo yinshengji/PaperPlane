@@ -25,6 +25,10 @@ class TestController extends Controller
 
     public function test()
     {
+        $res = \core\lib\Config::all('db');
+        $res = \core\lib\Config::all('db');
+        $res = \core\lib\Config::getByDot('default.USERNAME', 'db');
+        var_dump($res);
         var_dump($_POST);
         var_dump($_GET);
     }

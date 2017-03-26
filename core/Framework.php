@@ -44,7 +44,7 @@ class Framework
         /* 加载路由类获取控制器和方法 */
         $route = new \core\lib\Route();
         $module = $route->module;
-        $controller = ucfirst($route->cntl . 'Controller');
+        $controller = ucfirst($route->controller . 'Controller');
         $action = $route->action;
 
         $cntlFile = APP . $module . '/controller/' . $controller . '.php';
@@ -64,7 +64,8 @@ class Framework
 
             if (method_exists($cntlobj, $action)) {
                 $cntlClass::$action = $route->action;
-                $cntlobj->$action();
+                //$cntlobj->$action();
+                call_user_func_array([$cntlobj, $action], $_REQUEST);
             } else {
                 $error_string = 'function ' . $action . ' not find in' . $cntlClass;
                 E($error_string);
@@ -93,7 +94,7 @@ class Framework
             $class_temp = str_replace('\\', '/', $class);
             $file = TC . '/' . $class_temp . '.php';
 
-            if (is_file($file)) {
+            if (file_exists($file)) {
                 include $file;
                 self::$classMap[$class] = true;
             } else {

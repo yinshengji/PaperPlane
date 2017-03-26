@@ -1,6 +1,6 @@
 <?php
 return array(
     'MODULE' => 'index',
-    'CNTL' => 'index',
+    'CONTROLLER' => 'index',
     'ACTION' => 'index'
 );

@@ -9,6 +9,8 @@ class IndexController extends Controller
 {
     public function index()
     {
+        echo 'this is index page';
+        return;
         $model = new UserModel();
         $model->test();
     }
